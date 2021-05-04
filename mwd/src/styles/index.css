@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Set main page to have responsive design */
+  main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+  
+    display: grid;
+    /* define auto row size */
+    grid-auto-rows: 400px;
+    /* define our column size */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 1em;
+  }
+  
+  /* Set body background to off-white */
+  body {
+    background-color: #F2F2F2;
+  }
+
+  /* Main title */
+  h1 {
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+    padding-left: 100px;
+    /*position: relative;*/
+    font-weight: 900;
+    color: #353D40;
+    /*margin: 500;*/
+    font-size: 4rem;
+    margin-bottom: 0px;
+  }
+
+  .login{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    padding-left: 0px;
+    /*position: relative;*/
+    font-weight: 600;
+    color: #353D40;
+    /*margin: 500;*/
+    font-size: 2rem;
+    margin-bottom: 0px;
+  }
+
+  /* Sub title */
+  h2 {
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+    padding-left: 105px;
+    /*position: relative;*/
+    font-weight: 300;
+    color: #353D40;
+    /*margin: 500;*/
+    font-size: 3rem;
+    margin: 0;
+    display: inline-block;
+    padding-bottom: 20px;
+  }
+
+  /* Sub-sub title */
+  h3 {
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+    padding-left: 105px;
+    /*position: relative;*/
+    font-weight: 400;
+    color: #A1A5A6;
+    /*margin: 500;*/
+    font-size: 1.5rem;
+    margin: 0;
+    display: inline-block;
+  }
+
+  /* Add task button */
+  .button {
+    background-color: #F2B138;
+    border: #353D40;
+    border-width: 1em;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    transition-duration: 0.6s;
+    border-radius: 100px;
+    href: "addTask.html";
+}
+
+  /* Make the button have a + icon */
+.button .plusIcon {
+    background: url(../images/plusIcon.svg) no-repeat;
+    background-size: cover;
+    padding-bottom: calc(100% * 3 / 4);
+    float: left;
+    width: 30px;
+    height: 30px;
+}  
+
+.button .checkmark {
+  background: url(../images/checkmark.svg) no-repeat;
+  background-size: cover;
+  padding-bottom: calc(100% * 3 / 4);
+  float: left;
+  width: 10px;
+  height: 10px;
+}  
+
+.button .span {
+    width: 30px;
+    height: 30px;
+}  
+
+  /* Add effects for when user interacts with the button */
+.button:hover {
+  background-color: #07A66C;
+}
+
+.button:hover .plusIcon {
+    background: url(../images/plusIconHover.svg) no-repeat;
+    float: left;
+    background-size: cover;
+    padding-bottom: calc(100% * 3 / 4);
+    width: 30px;
+    height: 30px;
+}
+
+.button2 {
+  background-color: #F2B138;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  border: none;
+  color: #353D40;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 12px;	/* Rounds the edges */
+}
+
+.button3 {
+  background-color: #F2F2F2;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  border: none;
+  color: #353D40;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 10px;
+  width: 100%;
+  /*border-radius: 12px;	 Rounds the edges */
+}
+
+.button2:hover {
+  background-color: #07A66C;
+  color: #FFF;
+}
+
+.button3:hover {
+  border: 5px;
+}
+
+  /* tasks that are listed from data file */
+.test {
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  padding-left: 70px;
+  /*position: relative;*/
+  font-weight: 400;
+  color: #A1A5A6;
+  /*margin: 500;*/
+  font-size: 1.5rem;
+  margin: 0;
+  display: inline-block;
+  padding-bottom: 40px;
+}
+
+  /* Moves everything to the top corner */
+.topcorner {
+  position:absolute;
+  top:50px;
+  right: 100px;
+}
+
+.align {
+  padding-left: 105px;
+}
+
+hr {
+  border-top: 4px dotted grey;
+}
+
+
+{box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+label {
+  font-family: "Roboto", sans-serif;
+    text-align: left;
+    padding-left: 10px;
+    /*position: relative;*/
+    font-weight: 300;
+    color: #353D40;
+    /*margin: 500;*/
+    font-size: 1rem;
+    margin: 0;
+    display: inline-block;
+    padding-top: 20px;
+    padding-top: 10px;
+}
+
+  /* input boxes */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px; 
+    color: #353D40;
+    border-radius: 4px;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #FFF;
+    border: 2px; 
+    color: #353D40;
+    border-radius: 4px;
+  }
+
+/* Popup style */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+ 
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #F2F2F2;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+ 
+.close-icon {  
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+
+a {	/*sets links as buttons*/
+  background-color: #F2B138;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  border: none;
+  color: #353D40;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 12px;	/* Rounds the edges */
+}
+
+a:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.centered {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
