@@ -7,6 +7,8 @@ import "../../styles/index.css";
 import { Header } from "../Elements/Header.js";
 import { createTask, getAllTasks, getById, removeTask } from "../../Services/LearnService.js";
 import { getCurrentUser } from "../../Services/LearnServiceUser.js";
+//import {View, Button, Image, StyleSheet} from  'react-native';
+//import {launchImageLibrary} from  'react-native-image-picker';
 // import header
 
 const MainHeader = () => {
@@ -21,6 +23,7 @@ const MainHeader = () => {
     const [dateOf, setDate] = useState();
     const [time, setTime] = useState();
     const [frequency, setFrequency] = useState();
+    const [image, setImage] = useState();
 
     const [add, setAdd] = useState(false);
     const [tasks, setTasks] = useState([]);
@@ -43,12 +46,12 @@ const MainHeader = () => {
     useEffect(() => {
       // Check for add flag and make sure name state variable is defined
     if (name && add) {
-      createTask(name, location, dateOf, time, frequency).then((newTask) => {
+      createTask(name, location, dateOf, time, frequency, image).then((newTask) => {
         setAdd(false);
         // Add the newly created lesson to the lessons array
         // to render the new list of lessons (thru spread/concatination)
         setTasks([...tasks, newTask]);
-    });
+      });
   }
 // Check if remove state variable is holding an ID
 if (remove.length > 0) {
@@ -64,7 +67,38 @@ if (remove.length > 0) {
 }
 }, [name, tasks, add, remove]);
 
-  // Handler to handle event passed from child submit button
+/*handleSaveImage: function() {
+  var imageFile = new Parse.File(image, {base64: this.state.preview});
+  var that = this;
+
+  return imageFile.save().then(function () {
+
+      return ParseReact.Mutation.Set(that.data.event[0], {'primaryPhoto':imageFile}).dispatch();
+
+  }, function (error) {
+      console.log("Error");
+      console.log(error);
+  });
+},*/
+
+
+/*function pickImage() {
+  launchImageLibrary(
+	{
+	  mediaType:  'photo',
+	  includeBase64:  true,
+	  maxHeight:  200,
+	  maxWidth:  200,
+	},
+	(response) => {
+	  // Add selected image to the state
+	  setImage(response);
+	},
+  );
+}*/
+
+
+// Handler to handle event passed from child submit button
   const onClickHandler = (e) => {
     e.preventDefault();
     // Trigger add flag to create lesson and
@@ -73,6 +107,14 @@ if (remove.length > 0) {
     setAdd(true);
     alert("Task Submitted");
   };
+
+  const onUploadHandler = (e) => {
+    e.preventDefault();
+    setImage(e.target.value);
+    /*alert("Test");
+    var imageFile = new Parse.File(image);*/
+
+  }
 
     // Handler to track changes to the child input text
     /*const onChangeHandler = (e) => {
@@ -116,6 +158,12 @@ if (remove.length > 0) {
         setFrequency(e.target.value);
       };
 
+      const onImageChange = (e) => {
+        e.preventDefault();
+        // Continuously updating name to be added on submit
+        setImage(e.target.value);
+      };
+
       // State variable that will hold username value
       const [username, setUsername] = useState('');
       useEffect(() => {
@@ -125,6 +173,11 @@ if (remove.length > 0) {
         }
       , [username]);
       console.log("USERNAME IS: ", username);
+
+      const fileSelectedHandler = event => {
+        setImage(event.target.files[0])
+        console.log(event.target.files[0]);
+      }
 
   return (
     <div>
@@ -157,8 +210,12 @@ if (remove.length > 0) {
 
       <label> Frequency: </label>
       <input type="text" id="taskFrequency" name="taskFrequency" placeholder="Once" onChange={onFrequencyChange}/>
-      <br /><br />
-      <Child data="Submit" onChildClick={onClickHandler} />
+
+      <label> Image: </label>
+      <input type="file" onChange={fileSelectedHandler}></input>
+
+      <br/><br />
+      <Child data="Submit" onChildClick={onClickHandler}/>
     </form>
   </div>
       </>}

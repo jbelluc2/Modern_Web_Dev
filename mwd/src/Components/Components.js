@@ -9,7 +9,7 @@ export default function Components () {
     <Router>
       <Switch>
         <Route path="/login" component={Login} />
-        <Route path="/home" component={MainHome} />
+        <Route path="/home" component={MainGood} />
         <Route path="/user/:username" componenet={MainGood} />
         <Redirect to="/login" />
       </Switch>
