@@ -13,8 +13,8 @@ const MainList = () => {
       setTasks(tasks);
     });
 
-    getById("NAaOiKBukL").then((task) => {
-      console.log(task);
+    getById("ZAHiDmeYB3").then((task) => {
+      console.log("THIS IS A TEST:", task.get("image")["_url"]);
       setTask(task);
     });
   }, []);
@@ -36,6 +36,7 @@ const MainList = () => {
       // Reset remove state variable
       setRemove("");
     }
+    //console.log("Image to be displayed", tasks[0].get("image"))
   }, [tasks, remove]);
 
 
@@ -54,6 +55,7 @@ const MainList = () => {
             <li key={task.id} class="test"> 
               {task.get("name")} | {task.get("location")} | {task.get("time")}
             </li>{" "}
+            <img src={task.get("image")["_url"]} width="100" height="70"/>
             </span>
           </div>
           ))}
