@@ -41,6 +41,9 @@ function addTask() {
       <label> Frequency: </label>
       <input type="text" id="taskFrequency" name="taskFrequency" value="Enter task frequency"/>
 
+      <label> Image: </label>
+      <input type="text" id="taskFrequency" name="taskFrequency" value="Enter task frequency"/>
+
       <Child data="Submit" onChildClick={clickAlert} />
     </form>
   </div>

@@ -1,9 +1,14 @@
 import Parse from "parse";
 
 // CREATE ACTION - new task
-export const createTask = (name, location, date, time, frequency) => {
+export const createTask = (name, location, date, time, frequency, image) => {
   console.log("Creating: ", name);
-  console.log(name, location, date, time, frequency);
+  console.log(name, location, date, time, frequency, image);
+  console.log("Image name is: ", image["name"]);
+
+  //const imageFile = new Parse.File(image["name"], { base64: btoa("My file content") });
+  const imageFile = new Parse.File(image["name"], image);
+
   const Task = Parse.Object.extend("Task");
   const task = new Task();
   const temp = createDay(date);
@@ -11,12 +16,8 @@ export const createTask = (name, location, date, time, frequency) => {
   task.set("name", name);
   task.set("location", location);
   task.set("date", date);
+  task.set("image", imageFile);
 
-  // This is our issue. We need to pass a pointer to the database
-  // but we can only figure out how to pass an object. Once we get 
-  // this resolved, our data will be fully functioning and linked 
-  // properly
-  //task.set("Day", temp);
   task.set("time", time);
   task.set("frequency", frequency);
   return task.save().then((result) => {
