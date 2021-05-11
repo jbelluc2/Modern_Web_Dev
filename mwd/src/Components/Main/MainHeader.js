@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getGreeting } from "./generateGreeting.js";
 import Child from "./Child.js";
 import Form from "./Form";
-import Username from "./Login.js";
+//import Username from "./Login.js";
 import "../../styles/index.css";
 import { Header } from "../Elements/Header.js";
-import { createTask, getAllTasks, getById, removeTask } from "../../Services/LearnService.js";
+import { createTask, getAllTasks, removeTask } from "../../Services/LearnService.js";
 import { getCurrentUser } from "../../Services/LearnServiceUser.js";
 //import {View, Button, Image, StyleSheet} from  'react-native';
 //import {launchImageLibrary} from  'react-native-image-picker';
@@ -27,7 +27,7 @@ const MainHeader = () => {
 
     const [add, setAdd] = useState(false);
     const [tasks, setTasks] = useState([]);
-    const [task, setTask] = useState([]);
+    //const [task, setTask] = useState([]);
     const [remove, setRemove] = useState("");
 
     useEffect(() => {
@@ -67,36 +67,6 @@ if (remove.length > 0) {
 }
 }, [name, tasks, add, remove]);
 
-/*handleSaveImage: function() {
-  var imageFile = new Parse.File(image, {base64: this.state.preview});
-  var that = this;
-
-  return imageFile.save().then(function () {
-
-      return ParseReact.Mutation.Set(that.data.event[0], {'primaryPhoto':imageFile}).dispatch();
-
-  }, function (error) {
-      console.log("Error");
-      console.log(error);
-  });
-},*/
-
-
-/*function pickImage() {
-  launchImageLibrary(
-	{
-	  mediaType:  'photo',
-	  includeBase64:  true,
-	  maxHeight:  200,
-	  maxWidth:  200,
-	},
-	(response) => {
-	  // Add selected image to the state
-	  setImage(response);
-	},
-  );
-}*/
-
 
 // Handler to handle event passed from child submit button
   const onClickHandler = (e) => {
@@ -107,22 +77,6 @@ if (remove.length > 0) {
     setAdd(true);
     alert("Task Submitted");
   };
-
-  const onUploadHandler = (e) => {
-    e.preventDefault();
-    setImage(e.target.value);
-    /*alert("Test");
-    var imageFile = new Parse.File(image);*/
-
-  }
-
-    // Handler to track changes to the child input text
-    /*const onChangeHandler = (e) => {
-      e.preventDefault();
-      console.log(e.target.value);
-      // Continuously updating name to be added on submit
-      setName(e.target.value);
-    };*/
 
       // Handler to track changes to the child input text
       const onNameChange = (e) => {
@@ -156,12 +110,6 @@ if (remove.length > 0) {
         e.preventDefault();
         // Continuously updating name to be added on submit
         setFrequency(e.target.value);
-      };
-
-      const onImageChange = (e) => {
-        e.preventDefault();
-        // Continuously updating name to be added on submit
-        setImage(e.target.value);
       };
 
       // State variable that will hold username value

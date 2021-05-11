@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProtectedRoute from "../Auth/ProtectedRoute";
 import MainGood from "./MainGood";
 import Parse from "parse";
-import { getCurrentUser, verifyUser, loginUser, logOutUser } from "../../Services/LearnServiceUser.js";
+import { verifyUser, logOutUser } from "../../Services/LearnServiceUser.js";
 
 const MainHome = () => {
   const [flag, setFlag] = useState(false);

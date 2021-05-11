@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Form from "./Form";
 import { Header } from "../Elements/Header.js";
 import { createUser, loginUser } from "../../Services/LearnServiceUser.js";
 import Parse from "parse";
-import auth from "../Auth/Auth.js";
+//import auth from "../Auth/Auth.js";
 
 export default function Login() {
   

@@ -1,6 +1,6 @@
 import MainList from "./MainList";
 import MainHeader from "./MainHeader";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const MainGood = () => {
     return (

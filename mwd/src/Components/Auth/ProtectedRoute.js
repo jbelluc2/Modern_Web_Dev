@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 // You can pass props using the spread operator to throw them on an object if there are too many to break out
 const ProtectedRoute = ({ component: Component, flag, ...rest }) => {
