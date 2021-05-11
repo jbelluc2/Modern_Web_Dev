@@ -6,19 +6,6 @@ import { verifyUser, logOutUser } from "../../Services/LearnServiceUser.js";
 
 const MainHome = () => {
   const [flag, setFlag] = useState(false);
-  //var Username = document.getElementById("username").value;
-  
- // var Password = document.getElementById("password").value;
-  //console.log("Username: ", Username);
-  //console.log("Password: ", Password);
-
-  // I THINK THIS IS WHERE WE CHECK IF USER EXISTS
-  //var checked = verifyUser();
-  
-  //var checked = loginUser(Username, Password);
-  //console.log(checked);
-  //console.log("Check: ", checked);
-  //console.log("Check2: ", Boolean(checked));
   const check = verifyUser();
 
   useEffect(() => {
@@ -47,25 +34,6 @@ const MainHome = () => {
   }
 
   logOutUser();
-    // console.log("Flag:", flag);
-
-  // State variable that will hold username value
-  // const [username, setUsername] = useState('');
-  // useEffect(() => {
-  //     if (username === '') {
-  //         setUsername(getCurrentUser);
-  //     }
-  //   }
-  // , [username]);
-  // console.log("USERNAME IS: ", username);
-
-
-
-  // PUT IN TEMPORARILY FOR TESTING PURPOSES
-  //setFlag(true);
-
-  // In this case the flag is acquired through a check box but it could also be received from other methods
-  // What is a Parse.User method that would help here?
 
   return (
     <div>

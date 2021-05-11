@@ -1,3 +1,6 @@
+0.4.0 -- May 10
+
+This update added deployment, integration testing and photo upload.
 
 0.3.0 -- April 12
 

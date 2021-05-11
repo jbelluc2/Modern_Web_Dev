@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getGreeting } from "./generateGreeting.js";
 import Child from "./Child.js";
 import Form from "./Form";
-//import Username from "./Login.js";
 import "../../styles/index.css";
 import { Header } from "../Elements/Header.js";
 import { createTask, getAllTasks, removeTask } from "../../Services/LearnService.js";
 import { getCurrentUser } from "../../Services/LearnServiceUser.js";
-//import {View, Button, Image, StyleSheet} from  'react-native';
-//import {launchImageLibrary} from  'react-native-image-picker';
 // import header
 
 const MainHeader = () => {
@@ -27,7 +24,6 @@ const MainHeader = () => {
 
     const [add, setAdd] = useState(false);
     const [tasks, setTasks] = useState([]);
-    //const [task, setTask] = useState([]);
     const [remove, setRemove] = useState("");
 
     useEffect(() => {
