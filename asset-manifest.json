@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/Modern_Web_Dev/static/css/main.abe61f6a.chunk.css",
-    "main.js": "/Modern_Web_Dev/static/js/main.22cbb3c5.chunk.js",
-    "main.js.map": "/Modern_Web_Dev/static/js/main.22cbb3c5.chunk.js.map",
+    "main.js": "/Modern_Web_Dev/static/js/main.7f111cac.chunk.js",
+    "main.js.map": "/Modern_Web_Dev/static/js/main.7f111cac.chunk.js.map",
     "runtime-main.js": "/Modern_Web_Dev/static/js/runtime-main.2c8c3e44.js",
     "runtime-main.js.map": "/Modern_Web_Dev/static/js/runtime-main.2c8c3e44.js.map",
-    "static/js/2.9346a250.chunk.js": "/Modern_Web_Dev/static/js/2.9346a250.chunk.js",
-    "static/js/2.9346a250.chunk.js.map": "/Modern_Web_Dev/static/js/2.9346a250.chunk.js.map",
+    "static/js/2.358ed0b3.chunk.js": "/Modern_Web_Dev/static/js/2.358ed0b3.chunk.js",
+    "static/js/2.358ed0b3.chunk.js.map": "/Modern_Web_Dev/static/js/2.358ed0b3.chunk.js.map",
     "index.html": "/Modern_Web_Dev/index.html",
     "static/css/main.abe61f6a.chunk.css.map": "/Modern_Web_Dev/static/css/main.abe61f6a.chunk.css.map",
-    "static/js/2.9346a250.chunk.js.LICENSE.txt": "/Modern_Web_Dev/static/js/2.9346a250.chunk.js.LICENSE.txt",
+    "static/js/2.358ed0b3.chunk.js.LICENSE.txt": "/Modern_Web_Dev/static/js/2.358ed0b3.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Modern_Web_Dev/static/media/plusIconHover.eee6ffd7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.2c8c3e44.js",
-    "static/js/2.9346a250.chunk.js",
+    "static/js/2.358ed0b3.chunk.js",
     "static/css/main.abe61f6a.chunk.css",
-    "static/js/main.22cbb3c5.chunk.js"
+    "static/js/main.7f111cac.chunk.js"
   ]
 }
